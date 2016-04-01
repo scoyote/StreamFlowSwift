@@ -194,6 +194,11 @@
 					A16AB86E1CAE9E97008A86A9 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = KZL622Z2MN;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					A16AB8821CAE9E97008A86A9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -405,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StreamflowAlpha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StreamflowAlpha/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
