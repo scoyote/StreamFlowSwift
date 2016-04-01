@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A16AB8731CAE9E97008A86A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8721CAE9E97008A86A9 /* AppDelegate.swift */; };
+		A16AB8751CAE9E97008A86A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8741CAE9E97008A86A9 /* ViewController.swift */; };
+		A16AB8781CAE9E97008A86A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB8761CAE9E97008A86A9 /* Main.storyboard */; };
+		A16AB87A1CAE9E97008A86A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16AB8791CAE9E97008A86A9 /* Assets.xcassets */; };
+		A16AB87D1CAE9E97008A86A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB87B1CAE9E97008A86A9 /* LaunchScreen.storyboard */; };
+		A16AB8881CAE9E97008A86A9 /* StreamflowAlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8871CAE9E97008A86A9 /* StreamflowAlphaTests.swift */; };
+		A16AB8931CAE9E98008A86A9 /* StreamflowAlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8921CAE9E98008A86A9 /* StreamflowAlphaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A16AB8841CAE9E97008A86A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A16AB8671CAE9E97008A86A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A16AB86E1CAE9E97008A86A9;
+			remoteInfo = StreamflowAlpha;
+		};
+		A16AB88F1CAE9E97008A86A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A16AB8671CAE9E97008A86A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A16AB86E1CAE9E97008A86A9;
+			remoteInfo = StreamflowAlpha;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A16AB86F1CAE9E97008A86A9 /* StreamflowAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamflowAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A16AB8721CAE9E97008A86A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A16AB8741CAE9E97008A86A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A16AB8771CAE9E97008A86A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A16AB8791CAE9E97008A86A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A16AB87C1CAE9E97008A86A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A16AB87E1CAE9E97008A86A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A16AB8831CAE9E97008A86A9 /* StreamflowAlphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamflowAlphaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A16AB8871CAE9E97008A86A9 /* StreamflowAlphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamflowAlphaTests.swift; sourceTree = "<group>"; };
+		A16AB8891CAE9E97008A86A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A16AB88E1CAE9E97008A86A9 /* StreamflowAlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamflowAlphaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A16AB8921CAE9E98008A86A9 /* StreamflowAlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamflowAlphaUITests.swift; sourceTree = "<group>"; };
+		A16AB8941CAE9E98008A86A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A16AB86C1CAE9E97008A86A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A16AB8801CAE9E97008A86A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A16AB88B1CAE9E97008A86A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A16AB8661CAE9E97008A86A9 = {
+			isa = PBXGroup;
+			children = (
+				A16AB8711CAE9E97008A86A9 /* StreamflowAlpha */,
+				A16AB8861CAE9E97008A86A9 /* StreamflowAlphaTests */,
+				A16AB8911CAE9E98008A86A9 /* StreamflowAlphaUITests */,
+				A16AB8701CAE9E97008A86A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A16AB8701CAE9E97008A86A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB86F1CAE9E97008A86A9 /* StreamflowAlpha.app */,
+				A16AB8831CAE9E97008A86A9 /* StreamflowAlphaTests.xctest */,
+				A16AB88E1CAE9E97008A86A9 /* StreamflowAlphaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A16AB8711CAE9E97008A86A9 /* StreamflowAlpha */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB8721CAE9E97008A86A9 /* AppDelegate.swift */,
+				A16AB8741CAE9E97008A86A9 /* ViewController.swift */,
+				A16AB8761CAE9E97008A86A9 /* Main.storyboard */,
+				A16AB8791CAE9E97008A86A9 /* Assets.xcassets */,
+				A16AB87B1CAE9E97008A86A9 /* LaunchScreen.storyboard */,
+				A16AB87E1CAE9E97008A86A9 /* Info.plist */,
+			);
+			path = StreamflowAlpha;
+			sourceTree = "<group>";
+		};
+		A16AB8861CAE9E97008A86A9 /* StreamflowAlphaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB8871CAE9E97008A86A9 /* StreamflowAlphaTests.swift */,
+				A16AB8891CAE9E97008A86A9 /* Info.plist */,
+			);
+			path = StreamflowAlphaTests;
+			sourceTree = "<group>";
+		};
+		A16AB8911CAE9E98008A86A9 /* StreamflowAlphaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB8921CAE9E98008A86A9 /* StreamflowAlphaUITests.swift */,
+				A16AB8941CAE9E98008A86A9 /* Info.plist */,
+			);
+			path = StreamflowAlphaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A16AB86E1CAE9E97008A86A9 /* StreamflowAlpha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A16AB8971CAE9E98008A86A9 /* Build configuration list for PBXNativeTarget "StreamflowAlpha" */;
+			buildPhases = (
+				A16AB86B1CAE9E97008A86A9 /* Sources */,
+				A16AB86C1CAE9E97008A86A9 /* Frameworks */,
+				A16AB86D1CAE9E97008A86A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StreamflowAlpha;
+			productName = StreamflowAlpha;
+			productReference = A16AB86F1CAE9E97008A86A9 /* StreamflowAlpha.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A16AB8821CAE9E97008A86A9 /* StreamflowAlphaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A16AB89A1CAE9E98008A86A9 /* Build configuration list for PBXNativeTarget "StreamflowAlphaTests" */;
+			buildPhases = (
+				A16AB87F1CAE9E97008A86A9 /* Sources */,
+				A16AB8801CAE9E97008A86A9 /* Frameworks */,
+				A16AB8811CAE9E97008A86A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A16AB8851CAE9E97008A86A9 /* PBXTargetDependency */,
+			);
+			name = StreamflowAlphaTests;
+			productName = StreamflowAlphaTests;
+			productReference = A16AB8831CAE9E97008A86A9 /* StreamflowAlphaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A16AB88D1CAE9E97008A86A9 /* StreamflowAlphaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A16AB89D1CAE9E98008A86A9 /* Build configuration list for PBXNativeTarget "StreamflowAlphaUITests" */;
+			buildPhases = (
+				A16AB88A1CAE9E97008A86A9 /* Sources */,
+				A16AB88B1CAE9E97008A86A9 /* Frameworks */,
+				A16AB88C1CAE9E97008A86A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A16AB8901CAE9E97008A86A9 /* PBXTargetDependency */,
+			);
+			name = StreamflowAlphaUITests;
+			productName = StreamflowAlphaUITests;
+			productReference = A16AB88E1CAE9E97008A86A9 /* StreamflowAlphaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A16AB8671CAE9E97008A86A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = scoyote;
+				TargetAttributes = {
+					A16AB86E1CAE9E97008A86A9 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = KZL622Z2MN;
+					};
+					A16AB8821CAE9E97008A86A9 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = KZL622Z2MN;
+						TestTargetID = A16AB86E1CAE9E97008A86A9;
+					};
+					A16AB88D1CAE9E97008A86A9 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = KZL622Z2MN;
+						TestTargetID = A16AB86E1CAE9E97008A86A9;
+					};
+				};
+			};
+			buildConfigurationList = A16AB86A1CAE9E97008A86A9 /* Build configuration list for PBXProject "StreamflowAlpha" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A16AB8661CAE9E97008A86A9;
+			productRefGroup = A16AB8701CAE9E97008A86A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A16AB86E1CAE9E97008A86A9 /* StreamflowAlpha */,
+				A16AB8821CAE9E97008A86A9 /* StreamflowAlphaTests */,
+				A16AB88D1CAE9E97008A86A9 /* StreamflowAlphaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A16AB86D1CAE9E97008A86A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A16AB87D1CAE9E97008A86A9 /* LaunchScreen.storyboard in Resources */,
+				A16AB87A1CAE9E97008A86A9 /* Assets.xcassets in Resources */,
+				A16AB8781CAE9E97008A86A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A16AB8811CAE9E97008A86A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A16AB88C1CAE9E97008A86A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A16AB86B1CAE9E97008A86A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A16AB8751CAE9E97008A86A9 /* ViewController.swift in Sources */,
+				A16AB8731CAE9E97008A86A9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A16AB87F1CAE9E97008A86A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A16AB8881CAE9E97008A86A9 /* StreamflowAlphaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A16AB88A1CAE9E97008A86A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A16AB8931CAE9E98008A86A9 /* StreamflowAlphaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A16AB8851CAE9E97008A86A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A16AB86E1CAE9E97008A86A9 /* StreamflowAlpha */;
+			targetProxy = A16AB8841CAE9E97008A86A9 /* PBXContainerItemProxy */;
+		};
+		A16AB8901CAE9E97008A86A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A16AB86E1CAE9E97008A86A9 /* StreamflowAlpha */;
+			targetProxy = A16AB88F1CAE9E97008A86A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A16AB8761CAE9E97008A86A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A16AB8771CAE9E97008A86A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A16AB87B1CAE9E97008A86A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A16AB87C1CAE9E97008A86A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A16AB8951CAE9E98008A86A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A16AB8961CAE9E98008A86A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A16AB8981CAE9E98008A86A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StreamflowAlpha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlpha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A16AB8991CAE9E98008A86A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StreamflowAlpha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlpha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A16AB89B1CAE9E98008A86A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StreamflowAlphaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlphaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamflowAlpha.app/StreamflowAlpha";
+			};
+			name = Debug;
+		};
+		A16AB89C1CAE9E98008A86A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StreamflowAlphaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlphaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamflowAlpha.app/StreamflowAlpha";
+			};
+			name = Release;
+		};
+		A16AB89E1CAE9E98008A86A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StreamflowAlphaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlphaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = StreamflowAlpha;
+			};
+			name = Debug;
+		};
+		A16AB89F1CAE9E98008A86A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = StreamflowAlphaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlphaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = StreamflowAlpha;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A16AB86A1CAE9E97008A86A9 /* Build configuration list for PBXProject "StreamflowAlpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A16AB8951CAE9E98008A86A9 /* Debug */,
+				A16AB8961CAE9E98008A86A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A16AB8971CAE9E98008A86A9 /* Build configuration list for PBXNativeTarget "StreamflowAlpha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A16AB8981CAE9E98008A86A9 /* Debug */,
+				A16AB8991CAE9E98008A86A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A16AB89A1CAE9E98008A86A9 /* Build configuration list for PBXNativeTarget "StreamflowAlphaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A16AB89B1CAE9E98008A86A9 /* Debug */,
+				A16AB89C1CAE9E98008A86A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A16AB89D1CAE9E98008A86A9 /* Build configuration list for PBXNativeTarget "StreamflowAlphaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A16AB89E1CAE9E98008A86A9 /* Debug */,
+				A16AB89F1CAE9E98008A86A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A16AB8671CAE9E97008A86A9 /* Project object */;
+}
