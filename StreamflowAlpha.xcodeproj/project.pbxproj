@@ -14,6 +14,7 @@
 		A16AB87D1CAE9E97008A86A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB87B1CAE9E97008A86A9 /* LaunchScreen.storyboard */; };
 		A16AB8881CAE9E97008A86A9 /* StreamflowAlphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8871CAE9E97008A86A9 /* StreamflowAlphaTests.swift */; };
 		A16AB8931CAE9E98008A86A9 /* StreamflowAlphaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8921CAE9E98008A86A9 /* StreamflowAlphaUITests.swift */; };
+		A16AB8A51CAEAD3C008A86A9 /* MyClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8A41CAEAD3C008A86A9 /* MyClasses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A16AB88E1CAE9E97008A86A9 /* StreamflowAlphaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamflowAlphaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16AB8921CAE9E98008A86A9 /* StreamflowAlphaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamflowAlphaUITests.swift; sourceTree = "<group>"; };
 		A16AB8941CAE9E98008A86A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A16AB8A41CAEAD3C008A86A9 /* MyClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClasses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A16AB8791CAE9E97008A86A9 /* Assets.xcassets */,
 				A16AB87B1CAE9E97008A86A9 /* LaunchScreen.storyboard */,
 				A16AB87E1CAE9E97008A86A9 /* Info.plist */,
+				A16AB8A41CAEAD3C008A86A9 /* MyClasses.swift */,
 			);
 			path = StreamflowAlpha;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				A16AB8751CAE9E97008A86A9 /* ViewController.swift in Sources */,
 				A16AB8731CAE9E97008A86A9 /* AppDelegate.swift in Sources */,
+				A16AB8A51CAEAD3C008A86A9 /* MyClasses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
