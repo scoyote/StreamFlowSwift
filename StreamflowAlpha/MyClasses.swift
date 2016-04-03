@@ -25,3 +25,4 @@ class MyAnnotation: NSObject,MKAnnotation {
     }
     
 }
+

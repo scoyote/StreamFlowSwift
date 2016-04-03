@@ -43,11 +43,56 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         
         mapView.setRegion(region, animated: true)
-        let pp = MyAnnotation(title: "poo", coordinate: location, subtitle: "Poo3")
+        let pp = MyAnnotation(title: "Home", coordinate: location, subtitle: "901 Warnock Way")
         
         
         mapView.addAnnotation(pp);
         //Instead of writing two lines of annotation we can use addAnnotations() to add.
+        
+        func arrayFromContentsOfFileWithName(fileName: String) -> [String]? {
+            guard let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt") else {
+                return nil
+            }
+            
+            do {
+                let content = try String(contentsOfFile:path, encoding: NSUTF8StringEncoding)
+                return content.componentsSeparatedByString("\n")
+            } catch _ as NSError {
+                return nil
+            }
+        }
+        
+        let result:Array? = arrayFromContentsOfFileWithName("sites")
+        
+        for (index, element) in result!.enumerate() {
+            let r2:Array? = result![index].componentsSeparatedByString("\t")
+            print("\(index): \(element)")
+            print("\(index): Title \(r2?[1])")
+            print("\(index): SubTitle \(r2?[2])")
+            print("\(index): Latitude \(r2?[4])")
+            print("\(index): Longitude \(r2?[5])")
+            let latitude:CLLocationDegrees = (r2![4] as NSString).doubleValue
+            let longitude:CLLocationDegrees = (r2![5] as NSString).doubleValue
+            
+            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+            
+            let span:MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
+            
+            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+            
+            mapView.setRegion(region, animated: true)
+            let pp = MyAnnotation(title: r2![2], coordinate: location, subtitle: r2![1])
+            
+            
+            mapView.addAnnotation(pp);
+            //Instead of writing two lines of annotation we can use addAnnotations() to add.
+            
+            
+        }
+
+        
+        
+        
         
     }
     
@@ -73,6 +118,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Errors: " + error.localizedDescription)
     }
+    
+    
+    
+    
     
 }
 
