@@ -30,70 +30,59 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         self.mapView.showsUserLocation = true
         
-        
         // Do any additional setup after loading the view, typically from a nib.
+ 
+        let homeLat = Double(round(1000000*(locationManager.location?.coordinate.latitude)!) / 1000000)
+        let homeLon = Double(round(1000000*(locationManager.location?.coordinate.longitude)!) / 1000000)
+        let latDelta = 0.2
+        let lonDelta = 0.2
         
-        let latitude:CLLocationDegrees = 34.098904
-        let longitude:CLLocationDegrees = -84.460004
+        let latN = homeLat + latDelta
+        let latS = homeLat - latDelta
+        let lonW = homeLon - lonDelta
+        let lonE = homeLon + lonDelta 
         
-        let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        print(" (\(homeLat), \(homeLon)) : \(latN) \(latS) \(lonW) \(lonE)")
         
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
-        
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        
-        mapView.setRegion(region, animated: true)
-        let pp = MyAnnotation(title: "Home", coordinate: location, subtitle: "901 Warnock Way")
-        
-        
-        mapView.addAnnotation(pp);
-        //Instead of writing two lines of annotation we can use addAnnotations() to add.
-        
-        func arrayFromContentsOfFileWithName(fileName: String) -> [String]? {
-            guard let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt") else {
-                return nil
-            }
+        let url = NSURL(string: "http://waterservices.usgs.gov/nwis/site/?format=rdb&bBox=\(lonW),\(latS),\(lonE),\(latN)&outputDataTypeCd=iv&parameterCd=00060,00065&siteType=ST&siteStatus=active&hasDataTypeCd=iv")
+        print(url)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
+            (data, response, error) in
+            let rx = String(data: data!, encoding: NSUTF8StringEncoding)
             
-            do {
-                let content = try String(contentsOfFile:path, encoding: NSUTF8StringEncoding)
-                return content.componentsSeparatedByString("\n")
-            } catch _ as NSError {
-                return nil
-            }
-        }
-        
-        let result:Array? = arrayFromContentsOfFileWithName("sites")
+            let result:Array? = rx?.componentsSeparatedByString("\n")
         
         for (index, element) in result!.enumerate() {
             let r2:Array? = result![index].componentsSeparatedByString("\t")
-            print("\(index): \(element)")
-            print("\(index): Title \(r2?[1])")
-            print("\(index): SubTitle \(r2?[2])")
-            print("\(index): Latitude \(r2?[4])")
-            print("\(index): Longitude \(r2?[5])")
-            let latitude:CLLocationDegrees = (r2![4] as NSString).doubleValue
-            let longitude:CLLocationDegrees = (r2![5] as NSString).doubleValue
+            if r2![0] == "USGS"{
+                
+                print("\(index): \(element)")
+                print("\(index): Title \(r2?[1])")
+                print("\(index): SubTitle \(r2?[2])")
+                print("\(index): Latitude \(r2?[4])")
+                print("\(index): Longitude \(r2?[5])")
+                
+                let latitude:CLLocationDegrees = (r2![4] as NSString).doubleValue
+                let longitude:CLLocationDegrees = (r2![5] as NSString).doubleValue
+           
+                let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+             /*
+                let span:MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
+                
+                let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+                
+                self.mapView.setRegion(region, animated: true)
+            */
+                
+                let pp = MyAnnotation(title: r2![2], coordinate: location, subtitle: r2![1])
             
-            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-            
-            let span:MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
-            
-            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-            
-            mapView.setRegion(region, animated: true)
-            let pp = MyAnnotation(title: r2![2], coordinate: location, subtitle: r2![1])
-            
-            
-            mapView.addAnnotation(pp);
-            //Instead of writing two lines of annotation we can use addAnnotations() to add.
-            
+                self.mapView.addAnnotation(pp);
+                //Instead of writing two lines of annotation we can use addAnnotations() to add.
+            }
             
         }
-
-        
-        
-        
-        
+    }
+    task.resume()
     }
     
     override func didReceiveMemoryWarning() {
