@@ -12,7 +12,60 @@ import CoreLocation
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
     
-   
+    @IBAction func btnLoad(sender: UIButton) {
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        let homeLat = Float32((locationManager.location?.coordinate.latitude)!)
+        let homeLon = Float32((locationManager.location?.coordinate.longitude)!)
+        let latDelta = Float32(0.2)
+        let lonDelta = Float32(0.2)
+        
+        let latN = homeLat + latDelta
+        let latS = homeLat - latDelta
+        let lonW = homeLon - lonDelta
+        let lonE = homeLon + lonDelta
+        
+        //        print("\(latN)")
+        //        print("\(latS)")
+        //        print("\(lonW)")
+        //        print("\(lonE)")
+        
+        //        print(" (\(homeLat), \(homeLon)) : \(latN) \(latS) \(lonW) \(lonE)")
+        
+        let url = NSURL(string: "http://waterservices.usgs.gov/nwis/site/?format=rdb&bBox=\(lonW),\(latS),\(lonE),\(latN)&parameterCd=00060,00065")
+        
+        
+        print(url)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
+            (data, response, error) in
+            let rx = String(data: data!, encoding: NSUTF8StringEncoding)
+            
+            let result:Array? = rx?.componentsSeparatedByString("\n")
+            
+            for (index, element) in result!.enumerate() {
+                let r2:Array? = result![index].componentsSeparatedByString("\t")
+                if r2![0] == "USGS"{
+                    
+                    print("\(index): \(element)")
+                    print("\(index): Title \(r2?[1])")
+                    print("\(index): SubTitle \(r2?[2])")
+                    print("\(index): Latitude \(r2?[4])")
+                    print("\(index): Longitude \(r2?[5])")
+                    
+                    let latitude:CLLocationDegrees = (r2![4] as NSString).doubleValue
+                    let longitude:CLLocationDegrees = (r2![5] as NSString).doubleValue
+                    
+                    let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+                    
+                    let pp = MyAnnotation(title: r2![2], coordinate: location, subtitle: r2![1])
+                    
+                    self.mapView.addAnnotation(pp);
+                    //Instead of writing two lines of annotation we can use addAnnotations() to add.
+                }
+            }
+        }
+        task.resume()
+    }
     @IBOutlet var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
@@ -29,60 +82,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.locationManager.startUpdatingLocation()
         
         self.mapView.showsUserLocation = true
-        
-        // Do any additional setup after loading the view, typically from a nib.
- 
-        let homeLat = Double(round(1000000*(locationManager.location?.coordinate.latitude)!) / 1000000)
-        let homeLon = Double(round(1000000*(locationManager.location?.coordinate.longitude)!) / 1000000)
-        let latDelta = 0.2
-        let lonDelta = 0.2
-        
-        let latN = homeLat + latDelta
-        let latS = homeLat - latDelta
-        let lonW = homeLon - lonDelta
-        let lonE = homeLon + lonDelta 
-        
-        print(" (\(homeLat), \(homeLon)) : \(latN) \(latS) \(lonW) \(lonE)")
-        
-        let url = NSURL(string: "http://waterservices.usgs.gov/nwis/site/?format=rdb&bBox=\(lonW),\(latS),\(lonE),\(latN)&outputDataTypeCd=iv&parameterCd=00060,00065&siteType=ST&siteStatus=active&hasDataTypeCd=iv")
-        print(url)
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
-            (data, response, error) in
-            let rx = String(data: data!, encoding: NSUTF8StringEncoding)
-            
-            let result:Array? = rx?.componentsSeparatedByString("\n")
-        
-        for (index, element) in result!.enumerate() {
-            let r2:Array? = result![index].componentsSeparatedByString("\t")
-            if r2![0] == "USGS"{
-                
-                print("\(index): \(element)")
-                print("\(index): Title \(r2?[1])")
-                print("\(index): SubTitle \(r2?[2])")
-                print("\(index): Latitude \(r2?[4])")
-                print("\(index): Longitude \(r2?[5])")
-                
-                let latitude:CLLocationDegrees = (r2![4] as NSString).doubleValue
-                let longitude:CLLocationDegrees = (r2![5] as NSString).doubleValue
-           
-                let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-             /*
-                let span:MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
-                
-                let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-                
-                self.mapView.setRegion(region, animated: true)
-            */
-                
-                let pp = MyAnnotation(title: r2![2], coordinate: location, subtitle: r2![1])
-            
-                self.mapView.addAnnotation(pp);
-                //Instead of writing two lines of annotation we can use addAnnotations() to add.
-            }
-            
-        }
-    }
-    task.resume()
+       
     }
     
     override func didReceiveMemoryWarning() {
