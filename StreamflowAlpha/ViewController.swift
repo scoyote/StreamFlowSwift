@@ -25,32 +25,24 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let lonW = homeLon - lonDelta
         let lonE = homeLon + lonDelta
         
-        //        print("\(latN)")
-        //        print("\(latS)")
-        //        print("\(lonW)")
-        //        print("\(lonE)")
-        
-        //        print(" (\(homeLat), \(homeLon)) : \(latN) \(latS) \(lonW) \(lonE)")
-        
         let url = NSURL(string: "http://waterservices.usgs.gov/nwis/site/?format=rdb&bBox=\(lonW),\(latS),\(lonE),\(latN)&parameterCd=00060,00065")
-        
         
         print(url)
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
             (data, response, error) in
-            let rx = String(data: data!, encoding: NSUTF8StringEncoding)
+            let rx:String? = String(data: data!, encoding: NSUTF8StringEncoding)
             
-            let result:Array? = rx?.componentsSeparatedByString("\n")
+            var result:Array? = rx!.componentsSeparatedByString("\n")
             
             for (index, element) in result!.enumerate() {
                 let r2:Array? = result![index].componentsSeparatedByString("\t")
                 if r2![0] == "USGS"{
                     
                     print("\(index): \(element)")
-                    print("\(index): Title \(r2?[1])")
-                    print("\(index): SubTitle \(r2?[2])")
-                    print("\(index): Latitude \(r2?[4])")
-                    print("\(index): Longitude \(r2?[5])")
+                    print("\(index): Title \(r2![1])")
+                    print("\(index): SubTitle \(r2![2])")
+                    print("\(index): Latitude \(r2![4])")
+                    print("\(index): Longitude \(r2![5])")
                     
                     let latitude:CLLocationDegrees = (r2![4] as NSString).doubleValue
                     let longitude:CLLocationDegrees = (r2![5] as NSString).doubleValue
@@ -68,7 +60,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     @IBOutlet var mapView: MKMapView!
     
-    let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
