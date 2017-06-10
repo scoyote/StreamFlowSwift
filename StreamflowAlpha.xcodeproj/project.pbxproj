@@ -19,6 +19,7 @@
 		A16AB8AE1CAEFD03008A86A9 /* MyClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8A41CAEAD3C008A86A9 /* MyClasses.swift */; };
 		A16AB8AF1CAEFD04008A86A9 /* MyClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB8A41CAEAD3C008A86A9 /* MyClasses.swift */; };
 		A19560EB1CB0A23D00008096 /* sites.txt in Resources */ = {isa = PBXBuildFile; fileRef = A16AB8B61CAFF37F008A86A9 /* sites.txt */; };
+		A1D9BA621D0AB64D00FA2046 /* nga.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A1D9BA611D0AB64D00FA2046 /* nga.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		A16AB8AA1CAEF964008A86A9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A16AB8B61CAFF37F008A86A9 /* sites.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sites.txt; sourceTree = "<group>"; };
 		A16AB8B71CAFF493008A86A9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		A1D9BA611D0AB64D00FA2046 /* nga.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nga.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		A16AB8661CAE9E97008A86A9 = {
 			isa = PBXGroup;
 			children = (
+				A1D9BA611D0AB64D00FA2046 /* nga.gpx */,
 				A16AB8AA1CAEF964008A86A9 /* libsqlite3.tbd */,
 				A16AB8711CAE9E97008A86A9 /* StreamflowAlpha */,
 				A16AB8861CAE9E97008A86A9 /* StreamflowAlphaTests */,
@@ -202,12 +205,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = scoyote;
 				TargetAttributes = {
 					A16AB86E1CAE9E97008A86A9 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = KZL622Z2MN;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -217,11 +221,13 @@
 					A16AB8821CAE9E97008A86A9 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = KZL622Z2MN;
+						LastSwiftMigration = 0830;
 						TestTargetID = A16AB86E1CAE9E97008A86A9;
 					};
 					A16AB88D1CAE9E97008A86A9 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = KZL622Z2MN;
+						LastSwiftMigration = 0830;
 						TestTargetID = A16AB86E1CAE9E97008A86A9;
 					};
 				};
@@ -251,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D9BA621D0AB64D00FA2046 /* nga.gpx in Resources */,
 				A16AB87D1CAE9E97008A86A9 /* LaunchScreen.storyboard in Resources */,
 				A16AB87A1CAE9E97008A86A9 /* Assets.xcassets in Resources */,
 				A16AB8781CAE9E97008A86A9 /* Main.storyboard in Resources */,
@@ -352,8 +359,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -398,8 +407,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -418,6 +429,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -427,11 +439,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = StreamflowAlpha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -439,11 +453,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = StreamflowAlpha/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -455,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlphaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamflowAlpha.app/StreamflowAlpha";
 			};
 			name = Debug;
@@ -467,6 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlphaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamflowAlpha.app/StreamflowAlpha";
 			};
 			name = Release;
@@ -478,6 +496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlphaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = StreamflowAlpha;
 			};
 			name = Debug;
@@ -489,6 +508,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scoyote.StreamflowAlphaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = StreamflowAlpha;
 			};
 			name = Release;
