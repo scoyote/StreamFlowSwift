@@ -12,30 +12,33 @@ import CoreLocation
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
     
-    @IBAction func btnLoad(sender: UIButton) {
+    @IBAction func btnLoad(_ sender: UIButton) {
         
+      
         // Do any additional setup after loading the view, typically from a nib.
         let homeLat = Float32((locationManager.location?.coordinate.latitude)!)
         let homeLon = Float32((locationManager.location?.coordinate.longitude)!)
-        let latDelta = Float32(0.2)
-        let lonDelta = Float32(0.2)
+        let latDelta = Float32( self.mapView.region.span.latitudeDelta)
+        let lonDelta = Float32( self.mapView.region.span.longitudeDelta)
+        
+       
         
         let latN = homeLat + latDelta
         let latS = homeLat - latDelta
         let lonW = homeLon - lonDelta
         let lonE = homeLon + lonDelta
         
-        let url = NSURL(string: "http://waterservices.usgs.gov/nwis/site/?format=rdb&bBox=\(lonW),\(latS),\(lonE),\(latN)&parameterCd=00060,00065")
+        let url = URL(string: "http://waterservices.usgs.gov/nwis/site/?format=rdb&bBox=\(lonW),\(latS),\(lonE),\(latN)&parameterCd=00060,00065")
         
-        print(url)
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
+        //print(url as String)
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: {
             (data, response, error) in
-            let rx:String? = String(data: data!, encoding: NSUTF8StringEncoding)
+            let rx:String? = String(data: data!, encoding: String.Encoding.utf8)
             
-            var result:Array? = rx!.componentsSeparatedByString("\n")
+            var result:Array? = rx!.components(separatedBy: "\n")
             
-            for (index, element) in result!.enumerate() {
-                let r2:Array? = result![index].componentsSeparatedByString("\t")
+            for (index, element) in result!.enumerated() {
+                let r2:Array? = result![index].components(separatedBy: "\t")
                 if r2![0] == "USGS"{
                     
                     print("\(index): \(element)")
@@ -43,19 +46,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     print("\(index): SubTitle \(r2![2])")
                     print("\(index): Latitude \(r2![4])")
                     print("\(index): Longitude \(r2![5])")
-                    
                     let latitude:CLLocationDegrees = (r2![4] as NSString).doubleValue
                     let longitude:CLLocationDegrees = (r2![5] as NSString).doubleValue
                     
                     let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
                     
-                    let pp = MyAnnotation(title: r2![2], coordinate: location, subtitle: r2![1])
+                    let pp = MyAnnotation(title: r2![2].capitalized,coordinate: location, subtitle: r2![1].capitalized )
                     
                     self.mapView.addAnnotation(pp);
                     //Instead of writing two lines of annotation we can use addAnnotations() to add.
                 }
             }
-        }
+        }) 
         task.resume()
     }
     @IBOutlet var mapView: MKMapView!
@@ -74,7 +76,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.locationManager.startUpdatingLocation()
         
         self.mapView.showsUserLocation = true
-       
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,7 +85,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last
         
@@ -96,7 +98,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.locationManager.stopUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Errors: " + error.localizedDescription)
     }
     
