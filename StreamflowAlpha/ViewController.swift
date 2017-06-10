@@ -23,10 +23,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
        
         
-        let latN = homeLat + latDelta
-        let latS = homeLat - latDelta
-        let lonW = homeLon - lonDelta
-        let lonE = homeLon + lonDelta
+        let latN = homeLat + latDelta/2
+        let latS = homeLat - latDelta/2
+        let lonW = homeLon - lonDelta/2
+        let lonE = homeLon + lonDelta/2
         
         let url = URL(string: "http://waterservices.usgs.gov/nwis/site/?format=rdb&bBox=\(lonW),\(latS),\(lonE),\(latN)&parameterCd=00060,00065")
         
